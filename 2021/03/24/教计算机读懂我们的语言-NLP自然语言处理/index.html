@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="写在前面 两个拥有不同语言体系的人应该如何交流呢？也许他们只需要一个翻译者就可以破解这种尴尬。那么计算机又是如何搭建自己的语言体系，如何读懂甚至听懂我们的语言的呢？  今天距离中科院计算所的复试还有5天，发现了越来越多的变数，心情难以描述，导致没有办法静下心来准备复试。再加上我的个人网站 Future Space 总算在昨天初步完工了，无论如何也要应该“找个新坑”，于是准备借此机会开始学习NLP自">
+    <meta name="description" content="写在前面 两个拥有不同语言体系的人应该如何交流呢？也许他们只需要一个翻译者就可以破解这种尴尬。那么计算机又是如何搭建自己的语言体系，如何读懂甚至听懂我们的语言的呢？  今天距离中科院计算所的复试还有5天，发现了越来越多的变数，心情难以描述，导致没有办法静下心来准备复试。再加上我的个人网站Future Space总算在昨天初步完工了，无论如何也要应该“找个新坑”，于是准备借此机会开始学习NLP自然语">
 <meta property="og:type" content="article">
 <meta property="og:title" content="教计算机读懂我们的语言: NLP自然语言处理">
 <meta property="og:url" content="http://example.com/2021/03/24/%E6%95%99%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BB%E6%87%82%E6%88%91%E4%BB%AC%E7%9A%84%E8%AF%AD%E8%A8%80-NLP%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Future Space">
-<meta property="og:description" content="写在前面 两个拥有不同语言体系的人应该如何交流呢？也许他们只需要一个翻译者就可以破解这种尴尬。那么计算机又是如何搭建自己的语言体系，如何读懂甚至听懂我们的语言的呢？  今天距离中科院计算所的复试还有5天，发现了越来越多的变数，心情难以描述，导致没有办法静下心来准备复试。再加上我的个人网站 Future Space 总算在昨天初步完工了，无论如何也要应该“找个新坑”，于是准备借此机会开始学习NLP自">
+<meta property="og:description" content="写在前面 两个拥有不同语言体系的人应该如何交流呢？也许他们只需要一个翻译者就可以破解这种尴尬。那么计算机又是如何搭建自己的语言体系，如何读懂甚至听懂我们的语言的呢？  今天距离中科院计算所的复试还有5天，发现了越来越多的变数，心情难以描述，导致没有办法静下心来准备复试。再加上我的个人网站Future Space总算在昨天初步完工了，无论如何也要应该“找个新坑”，于是准备借此机会开始学习NLP自然语">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-24T03:35:19.000Z">
-<meta property="article:modified_time" content="2021-03-24T05:09:44.689Z">
+<meta property="article:modified_time" content="2021-03-24T07:12:54.709Z">
 <meta property="article:author" content="Sun Zhihao">
 <meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -77,6 +77,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2021/03/25/%E4%B8%80%E5%A0%86%E5%85%B3%E4%BA%8E%E6%95%B0%E5%AD%A6%E7%9A%84%E9%97%AE%E9%A2%98/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -104,7 +106,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8ENLP%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">关于NLP的简单介绍</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -151,9 +153,9 @@
     <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><blockquote>
 <p>两个拥有不同语言体系的人应该如何交流呢？也许他们只需要一个翻译者就可以破解这种尴尬。那么计算机又是如何搭建自己的语言体系，如何读懂甚至听懂我们的语言的呢？</p>
 </blockquote>
-<p>今天距离中科院计算所的复试还有5天，发现了越来越多的变数，心情难以描述，导致没有办法静下心来准备复试。再加上我的个人网站 <a target="_blank" rel="noopener" href="https://sunzhihaofuture.github.io/">Future Space</a> 总算在昨天初步完工了，无论如何也要应该“找个新坑”，于是准备借此机会开始学习NLP自然语言处理，以后总归是要接触的。</p>
+<p>今天距离中科院计算所的复试还有5天，发现了越来越多的变数，心情难以描述，导致没有办法静下心来准备复试。再加上我的个人网站<a target="_blank" rel="noopener" href="https://sunzhihaofuture.github.io/">Future Space</a>总算在昨天初步完工了，无论如何也要应该“找个新坑”，于是准备借此机会开始学习NLP自然语言处理，以后总归是要接触的。</p>
 <p>参考资料：<a target="_blank" rel="noopener" href="https://mofanpy.com/">莫烦Python</a></p>
-
+<h1 id="关于NLP的简单介绍"><a href="#关于NLP的简单介绍" class="headerlink" title="关于NLP的简单介绍"></a>关于NLP的简单介绍</h1>
   </div>
 </article>
 
@@ -178,7 +180,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8ENLP%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">关于NLP的简单介绍</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
